@@ -12,3 +12,53 @@
 [epub|type~="se:bridgehead"] i{
 	font-style: normal;
 }
+
+.caption{
+	font-variant: small-caps;
+	text-align: center;
+}
+
+/* Centered dedications */
+section[epub|type~="dedication"]{
+	text-align: center;
+}
+
+section[epub|type~="dedication"] > *{
+	display: inline-block;
+	margin: auto;
+	margin-top: 3em;
+	max-width: 80%;
+}
+
+@supports(display: flex){
+	section[epub|type~="dedication"]{
+		align-items: center;
+		box-sizing: border-box;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: calc(98vh - 3em);
+		padding-top: 3em;
+	}
+
+	section[epub|type~="dedication"] > *{
+		margin: 0;
+	}
+}
+
+section[epub|type~="dedication"] p{
+	line-height: 1.5;
+	text-indent: 0;
+}
+
+.dedication-small{
+	font-size: .67em;
+}
+
+.dedication-medium{
+	font-size: .83em;
+}
+
+.dedication-large{
+	font-size: 1.17em;
+}
